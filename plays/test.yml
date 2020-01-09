@@ -2,7 +2,8 @@
 - hosts: localhost
   tasks:
     - shell: "tree {{ playbook_dir }}/../"
-      register: toto
-    - debug:
-        var: toto
+      register: myvar
+    - copy:
+        content: "{{ myvar }}"
+        dest: "/tmp/tmp_tree"
 ...
