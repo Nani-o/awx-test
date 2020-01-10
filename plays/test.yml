@@ -1,6 +1,8 @@
 ---
 - hosts: localhost
   tasks:
+    - package:
+        name: tree
     - shell: "tree {{ playbook_dir }}/../"
       register: myvar
     - copy:
