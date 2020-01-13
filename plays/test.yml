@@ -4,6 +4,6 @@
     - shell: "tree {{ playbook_dir }}/../"
       register: myvar
     - copy:
-        content: "{{ myvar }}"
-        dest: "/tmp/tmp_tree"
+        content: "{{ myvar.stdout }}"
+        dest: "/tmp/tree"
 ...
